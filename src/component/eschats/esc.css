@@ -1,0 +1,20 @@
+.head{
+    height:44px;
+    background: aaa
+}
+.top{
+    display: flex;
+    flex-direction: column;
+}
+.mon {
+    display: flex;
+   
+}
+.mon>div {
+    width: 160px;
+    height:100px;
+    margin: 0 20px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+}

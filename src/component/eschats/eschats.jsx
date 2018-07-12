@@ -1,17 +1,24 @@
-import React, { Component } from 'react'
-import monment from 'moment'
+import React, { Component,Fragment } from 'react'
+import moment from 'moment'
 import echarts  from 'echarts'
 // import LazyComponent from '../../tool/lazyCompony'
 // console.log( LazyComponent)
-
+import http from '../../until/http'
+import style from '../eschats/esc'
 class Eschats extends Component {
     constructor(props){
         super(props)
+        let oData = new Date();
+        let arr = [];
+        for(var i=1;i<=7;i++){
+            arr.unshift(moment().month(oData.getMonth()).subtract(i,'day').format("YYYY-MM-DD"))
+        } 
+        console.log(arr)
         this.state={
             option : {
                 xAxis: {
                     type: 'category',
-                    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                    data: arr
                 },
                 yAxis: {
                     type: 'value'
@@ -24,9 +31,16 @@ class Eschats extends Component {
             
         }
     }
+    componentWillMount(){
+       
+    }
     componentDidMount(){
-        let  myChart= echarts.init(this.refs['main'])  
+        let  myChart= echarts.init(this.div); 
         myChart.setOption(this.state.option);
+       
+        http.post('/dsp-report/index',{}).then((res)=>{
+            console.log(res)
+    })
         window.onresize = ()=>{
             let Wmain = document.documentElement.clientWidth -256;
             myChart.resize(Wmain)
@@ -35,13 +49,29 @@ class Eschats extends Component {
       
     }
     render() {
+        
         return (
-            <div>
-            
-            <div style={{width:'100%',height:'400px'}} ref='main'>
+            <Fragment>
+             <div className={style.top}>
+                 <header className={style.head}>
+                     111
+                 </header>
+                 <div className={style.mon}>
+                    <div>
+                        <p>现金账户</p>
+                        <h3>￥126,560.00</h3>
+                    </div>
+                    <div>
+                        <p>今日消耗</p>
+                        <h3>￥5400</h3>
+                    </div>
+                 </div>
+                
+             </div>
+            <div style={{width:'100%',height:'400px'}} ref={(div)=>{(this.div=div)}}>
                  
             </div>
-            </div>
+            </Fragment>
         )
     }
 }

@@ -5,12 +5,18 @@ import Login from '@/login'
 import Eschats from '@/eschats/eschats'
 // import Gao from '@/eschats/gao'
 import LazyComponent from '../tool/lazyComponent'
+import {Route,Switch,Redirect} from 'react-router-dom'
 console.log(LazyComponent )
 let lazyComponentHandle=()=>{
     return <LazyComponent lazy={()=>{return import("../component/eschats/gao")}}/>
   }
 let router = {
      routes:[
+         {
+            path:"/",
+            component:()=><Redirect to="/home/eschats"/>,
+            exact:true
+         },
          {
             path:"/home",
              component:Home,
@@ -32,6 +38,7 @@ let router = {
          {
             path:"/login",
            component:Login,
+           exact:true
         }
      ]
 }
