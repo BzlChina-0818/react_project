@@ -53,9 +53,7 @@ class Eschats extends Component {
         return (
             <Fragment>
              <div className={style.top}>
-                 <header className={style.head}>
-                     111
-                 </header>
+                
                  <div className={style.mon}>
                     <div>
                         <p>现金账户</p>

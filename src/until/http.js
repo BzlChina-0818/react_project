@@ -18,7 +18,7 @@ let querystring ={
     }
 }
 let baseUrl =process.env.NODE_ENV =="development"?"http://localhost:9000":""
-   
+import {getCookie} from './decode'
 export default {
       get(url,obj){
         let o = querystring.strify(obj)
@@ -44,7 +44,8 @@ export default {
             fetch(baseUrl+url,{
                 method:"post",
                 headers:{
-                    "Content-Type":"application/json"
+                    "Content-Type":"application/json",
+                    "Authorize":getCookie('token')
                 },
                 body:JSON.stringify(params)
               

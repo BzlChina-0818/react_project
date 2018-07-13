@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import http from '../../until/http'
 export default class componentName extends Component {
   render() {
     return (
@@ -7,5 +7,10 @@ export default class componentName extends Component {
            gao
       </div>
     )
+  }
+  componentDidMount(){
+    http.post('/dsp-creative/daata').then(( res)=>{
+         console.log(res)
+   })
   }
 }

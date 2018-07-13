@@ -1,14 +1,13 @@
 import {Route,Switch,Redirect} from 'react-router-dom'
 import React,{Component,Fragment} from 'react'
-function getCookie(str){
-    return true
-}
+
+import {getCookie} from '../until/decode'
 class RouteCom extends Component{
     
     render(){
         console.log(this.props.childRoutes)
         return (
-            <div>
+            <Fragment>
                 
              <Switch>
                {this.props.childRoutes.map((item,index)=>{
@@ -17,7 +16,7 @@ class RouteCom extends Component{
                         if(item.children){
                          return <item.component {...location} childRoutes={item.children} />
                          }else{
-                            if(!getCookie()||item.path =='/login'){
+                            if(getCookie('token')||item.path =='/login'){
                                 return <item.component {...location} />
                             }else{
                                 return  <Redirect to="/login"/>
@@ -29,7 +28,7 @@ class RouteCom extends Component{
                     {/* <Redirect to="/home/eschats"/> */}
                 
                </Switch>
-            </div>
+            </Fragment>
           
         )
     }

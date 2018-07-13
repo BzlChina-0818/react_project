@@ -1,7 +1,4 @@
-.head{
-    height:44px;
-    background: aaa
-}
+
 .top{
     display: flex;
     flex-direction: column;
