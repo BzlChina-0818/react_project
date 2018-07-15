@@ -15,8 +15,8 @@ module.exports = merge(base, {
             inline: true,
             //支持模块热更新
             hot: true,
-            open: true,
-            chunkFilename:'[name].[hash].js'
+            open: true
+            
         },
         devtool:'eval-source-map',
     

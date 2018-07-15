@@ -8,7 +8,7 @@ import LazyComponent from '../tool/lazyComponent'
 import {Route,Switch,Redirect} from 'react-router-dom'
 console.log(LazyComponent )
 let lazyComponentHandle=()=>{
-    return <LazyComponent lazy={()=>{return import("../component/eschats/gao")}}/>
+    return <LazyComponent lazy={()=>{return import("../component/eschats/plan")}}/>
   }
 let router = {
      routes:[
@@ -26,7 +26,7 @@ let router = {
                      component:Eschats,
                  },
                  {
-                    path:'/home/gao',
+                    path:'/home/plan',
                     component:lazyComponentHandle
                 },
              ]

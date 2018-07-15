@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component ,Fragment} from 'react'
 
 export default class LazyComponent extends Component {
     constructor(props){
@@ -17,9 +17,9 @@ export default class LazyComponent extends Component {
     render() {
         let {Com} = this.state
         return (
-            <div>
+            <Fragment>
                 {Com ?<Com {...this.props}/>:null}
-            </div>
+            </Fragment>
         )
     }
 }

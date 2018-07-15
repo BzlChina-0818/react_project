@@ -3,12 +3,9 @@ import React,{Component,Fragment} from 'react'
 
 import {getCookie} from '../until/decode'
 class RouteCom extends Component{
-    
     render(){
-        console.log(this.props.childRoutes)
         return (
-            <Fragment>
-                
+            <Fragment>         
              <Switch>
                {this.props.childRoutes.map((item,index)=>{
               
@@ -20,13 +17,10 @@ class RouteCom extends Component{
                                 return <item.component {...location} />
                             }else{
                                 return  <Redirect to="/login"/>
-                            }
-                        
+                            } 
                         }   
                     }} key={index}></Route>
                })}
-                    {/* <Redirect to="/home/eschats"/> */}
-                
                </Switch>
             </Fragment>
           

@@ -63,7 +63,7 @@ class Home extends Component {
             </Menu.Item>
             <SubMenu key="sub1" title={<span><Icon type="mail" /><span>广告管理</span></span>}>
               <Menu.Item key="5">
-                <Link to="/home/gao">广告计划</Link>
+                <Link to="/home/plan">广告计划</Link>
               </Menu.Item>
               <Menu.Item key="6">广告单元</Menu.Item>
               <Menu.Item key="7">广告创意</Menu.Item>
@@ -79,14 +79,13 @@ class Home extends Component {
           </Menu>
         </div>
         <div className={style.right}>
-          <header className={style.head}>
-
-            <Dropdown overlay={menu} trigger={['click']}>
-              <a className="ant-dropdown-link" href="#">
-                {this.state.loca} <Icon type="down" />
-              </a>
-            </Dropdown>,
-          </header>
+              <header className={style.head}>
+                <Dropdown overlay={menu} trigger={['click']}>
+                  <a className="ant-dropdown-link" href="#">
+                    {this.state.loca} <Icon type="down" />
+                  </a>
+                </Dropdown>
+              </header>
           <RouterView childRoutes={this.props.childRoutes} />
         </div>
 

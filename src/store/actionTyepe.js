@@ -1,0 +1,1 @@
+export const UP_DATA_LIST = "UP_DATA_LIST"

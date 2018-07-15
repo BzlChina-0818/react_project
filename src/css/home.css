@@ -8,6 +8,8 @@
 .right{
     flex:1;
     background: #ccc;
+    overflow-y:scroll;
+ 
 }
 .login{
     width:100%;
@@ -17,5 +19,8 @@
 }
 .head{
     height:44px;
-    background: aaa
+   
+}
+.scr{
+    overflow-y: scroll;
 }
