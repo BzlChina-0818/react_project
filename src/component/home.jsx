@@ -25,6 +25,7 @@ class Home extends Component {
   }
 
   render() {
+    console.log(this)
     const menu = (
       <Menu onClick={this.clickMenu}>
         <Menu.Item key="0">

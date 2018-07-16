@@ -101,6 +101,7 @@ export default class Plan extends Component {
   updataTable(){
    
     http.post('/dsp-creative/daata').then(( res)=>{
+      
       console.log('已删除')
        this.setState({
         dataSource:res.data.list
